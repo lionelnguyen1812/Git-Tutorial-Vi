@@ -106,7 +106,7 @@ là khi mô hình hóa luồng làm việc trên Git, ta có kho trung tâm sẽ
 trong khi những kho địa phương trên máy của các cộng tác việc là 
 kho-không-thuần.
 
-![](git-tutorial-basics-init-barrepositories.png)
+![](/images/git-tutorial-basics-init-barrepositories.png)
 
 **Ví dụ**
 
