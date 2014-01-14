@@ -134,10 +134,10 @@ trên bản chính thì cũng có thể làm với bản sao. Bản sao cũng c�
 chính, có lịch sử sửa đổi của riêng nó, bạn có thể quản lý mã nguồn với riêng 
 nó, hoàn toàn biệt lập với kho chính.
 
-Như một tiện ích, việc clone sẽ tự động tạo ra một thứ gọi là "nguồn gốc" (nguyên 
-bản: origin), thứ này chỉ trở lại kho gốc. Sự tồn tại của "nguồn gốc" giúp Git 
-dễ dàng tương tác với kho trung tâm và hoàn thiện sự "giống một cách hoàn hảo" 
-của bản sao so với bản chính.
+Như một tiện ích, việc clone sẽ tự động tạo ra một thứ gọi là "nguồn gốc" 
+(nguyên bản: origin), thứ này chỉ trở lại kho gốc. Sự tồn tại của "nguồn gốc" 
+giúp Git dễ dàng tương tác với kho trung tâm và hoàn thiện sự "giống một cách 
+hoàn hảo" của bản sao so với bản chính.
 
 #####Sử dụng
 
@@ -396,44 +396,6 @@ thay đổi trạng thái của file mới giống như file mà đã được t
 lệnh `git add`.
 
 ####Lệnh `git commit`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
