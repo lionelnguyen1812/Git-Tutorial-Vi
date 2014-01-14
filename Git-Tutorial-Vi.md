@@ -173,7 +173,7 @@ bản sao (hay cũng có thể gọi là bản chính?)) với nhau. Thay vì ki
 hiện hành vào kho chính SVN, ở Git bạn `push` hoặc `pull` những `commit` từ một 
 kho này tới một kho khác.
 
-![](/images/git-tutorial-basics-init-barrepositories.png)
+![](/images/git-tutorial-basics-clone-repotorepocollaboration.png)
 
 Dĩ nhiên, không có điều gì cản trở bạn chỉ định rõ một kho Git duy nhất để đồng
 bộ. Ví dụ như, bằng việc đơn giản là thiết kế một kho Git nào đó như là kho 
