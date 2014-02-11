@@ -4,74 +4,78 @@
 Hướng dẫn sử dụng Git cho dự án Agile
 =====================================
 
-#Chơi với Git đi
+# Chơi với Git đi
 
 ![](/images/git_home.png)
 
-Nhiều nhóm phát triển phần mềm đã chuyển đổi từ những hệ thống quản lý mã nguồn 
-tập trung như Subversion sang hệ thống phân tán giống Git.
+Nhiều nhóm phát triển phần mềm đã chuyển đổi từ những hệ thống quản lý mã 
+nguồn tập trung như Subversion sang hệ thống phân tán giống Git.
 
-Loạt bài viết này nhằm mục đích giới thiệu một cái nhìn về hệ thống Git, những 
-mã lệnh của nó cùng với guides để sử dụng trong thực tế. Nhóm của bạn hoàn toàn
-có thể giữ nguyên phong cách làm việc của mình trong khi vẫn có được những lợi 
-ích từ sự nhẹ nhàng và nhiều tính năng mà Git mang tới.
+Loạt bài viết này nhằm mục đích giới thiệu một cái nhìn về hệ thống Git, 
+những mã lệnh của nó cùng với guides để sử dụng trong thực tế. Nhóm của bạn 
+hoàn toàn có thể giữ nguyên phong cách làm việc của mình trong khi vẫn có 
+được những lợi ích từ sự nhẹ nhàng và nhiều tính năng mà Git mang tới.
 
-#Hướng dẫn Git
+# Hướng dẫn Git
 
 ![](/images/git_tutorials.png)
 
-##1. Git Cơ bản
+## 1. Git Cơ bản
 
 ![](/images/git-tutorial_basics.png)
 
-Loạt bài đầu tiên - "Git cơ bản" cung cấp khái quát ngắn gọn về những mã lệnh
-điều khiển quan trọng nhất của Git. Đầu tiên, section *Cài đặt một repo*
-giải thích tất cả những công cụ cần thiết để bạn có thể bắt đầu một dự án quản
-lý mã nguồn. Sau đó thì, section còn lại giới thiệu những lệnh điều khiển mà 
-bạn sẽ thường xuyên sử dụng.
+Loạt bài đầu tiên - "Git cơ bản" cung cấp khái quát ngắn gọn về những mã lệnh 
+điều khiển quan trọng nhất của Git. Đầu tiên, section *Cài đặt một repo* 
+giải thích tất cả những công cụ cần thiết để bạn có thể bắt đầu một dự án 
+quản lý mã nguồn. Sau đó thì, section còn lại giới thiệu những lệnh điều 
+khiển mà bạn sẽ thường xuyên sử dụng.
 
-Đi theo tới phần cuối của chương này, bạn đã có thể tạo được một kho Git,
-ghi một bản chụp nhanh của project của bạn cho mục đích an toàn, và xem lịch sử
-sửa đổi của project của bạn.
+Đi theo tới phần cuối của chương này, bạn đã có thể tạo được một kho Git, 
+ghi một bản chụp nhanh của project của bạn cho mục đích an toàn, và xem lịch 
+sử sửa đổi của project của bạn.
 
-###Khởi tạo một kho Git
+### Khởi tạo một kho Git
 
-Trong bản gốc của hướng dẫn này, từ "kho" trong tiếng Anh là "repository".
-Tôi có thói quen gọi miệng là "bản chính" từ lúc còn chập chững học về Git. Có 
-lẽ vì tôi thích tiền đề "mọi kho ở client đều là một kho của project". Bạn cho 
-phép tôi gọi tắt repository là "kho" ở đây, bạn. Hi vọng bạn sẽ không khó chịu.
+#### Lời người dịch
+
+Trong bản dịch này, từ "kho" tương ứng với "repository" trong bản gốc tiếng 
+Anh.
+
+Tài liệu này có một số nội dung mà giải thích rõ hơn cho các độc giả mà đã 
+quen thuộc với một trình quản lý phiên bản khác nào đó như SVN hoặc VCS. Nhưng 
+điều này không có nghĩa là tài liệu này là khó tiếp cận đối với người mới.
 
 Dịch vụ lưu trữ kho Git lớn nhất hiện nay là **GitHub** cung cấp cho bạn một 
 client Git với giao diện đồ họa rất đẹp và dễ dùng. Nhưng chỉ có trên Windows, 
-dù thế tôi vẫn khuyến khích bạn tốt nhất sử dụng mã lệnh vì tính "mạnh" và 
-"rõ ràng" của nó.
+dù thế tôi vẫn khuyến khích bạn tốt nhất sử dụng cơ chế dòng lệnh vì chỉ ở 
+trên một terminal bạn mới có thể quan sát được điều gì đang thực sự xảy ra một 
+cách chi tiết nhất (thực tế, cá nhân tôi còn luôn có cảm giác bất an khi nhấn 
+nút **Sync** trên giao diện trình điều khiển đồ họa được cung cấp bởi 
+**GitHub**.
 
-Về mặt cá nhân, tôi luôn có cảm giác bất khi nhấn nút **Sync** trên giao diện
-điều khiển đồ họa của **GitHub**.
+Để sử dụng được mã lệnh tốt, bạn nên trang bị cho mình một chút về các command 
+cơ bản như `dir`, `cd`, `cd ..`, `cd \`, `md`, ... (trên cmd của Windows) hay 
+`ls`, `mkdir`, `cd`, `rm`,... trên các hệ điều hành họ Unix/Linux.*
 
-Để sử dụng được mã lệnh tốt, bạn nên trang bị cho mình một chút về các command
-cơ bản như `dir`, `cd`, `cd ..`, `cd \`, `md`, ... (trên cmd của Windows) hay
-`ls`, `mkdir`, `cd`, `rm`,... trên các hệ điều hành họ Unix/Linux.
-
-####Lệnh `git init`
+#### Lệnh `git init`
 
 ![](/images/git-tutorial-basics-init.png)
 
-Lệnh `git init` sẽ tạo một kho Git mới trên thư mục hiện tại. Nó có thể dùng
-để chuyển một project chưa được cung cấp sự quản lý phiên bản thành một bản
+Lệnh `git init` sẽ tạo một kho Git mới trên thư mục hiện tại. Nó có thể dùng 
+để chuyển một project chưa được cung cấp sự quản lý phiên bản thành một bản 
 chính Git hoặc tạo ra một kho Git rỗng mới.
 
-**Phần lớn các lệnh Git khác không cho phép chạy bên ngoài thư mục repo**
- (bản thân "repo" là một thư mục, nên tôi không viết là "thư mục chứa 
- repo"). Vì vậy gần như đây là lệnh Git đầu tiên bạn thực hiện trên một 
- project mới.
+**Phần lớn các lệnh Git khác không cho phép chạy bên ngoài thư mục repo** 
+(bản thân "repo" là một thư mục, nên tôi không viết là "thư mục chứa repo"). 
+Vì vậy gần như đây luôn là lệnh Git đầu tiên bạn thực hiện trên một project 
+mới.
 
 Chạy `git init` sẽ tạo ra một thư mục ẩn `.git` chứa các file metadata trong 
 thư mục hiện hành. Ngoại trừ thư mục `.git`, những phần còn lại của
 project sẽ không có gì thay đổi (không giống như SVN yêu cầu phải có một thư
 mục metadata trong mỗi thư mục con).
 
-#####Sử dụng
+##### Sử dụng
 
     git init
 
@@ -88,7 +92,7 @@ chính Git, thư mục này sẽ chỉ chứa thư mục ẩn `.git`.
 
 khởi tạo một kho thuần. Tôi sẽ giải thích rõ hơn về kho thuần ngay sau đây.
 
-#####Lời bàn
+##### Lời bàn
 
 Khi so sánh với SVN, lệnh `git init` quá sức đơn giản cho việc khởi tạo một 
 repo mới. Git không hỏi gì thêm, không cần import file, không checkout đủ thứ.
@@ -100,28 +104,28 @@ trung tâm, những cộng tác viên khác không cần phải chạy `init` ch
 máy tính của họ. Thay vì đấy, họ sẽ dùng `git clone` để tạo một bản sao về máy 
 tính của mình.
 
-#####Repo thuần
+##### Repo thuần
 
 Gọi như vậy vì nó không chứa thư mục làm việc (tôi có tham khảo 
 giải nghĩa này từ một bài dịch khác của tác giả Trần Ngọc Quân, các bạn có thể
 xem bài viết gốc [ở đây][link_gitbare]). Nó chỉ chứa các tệp tin trong thư mục 
-`.git`. Hay nó cách khác nó chứa lịch sử mã nguồn của một dự án, và không bao
+`.git`. Hay nói cách khác nó chứa lịch sử mã nguồn của một dự án, và không bao
 giờ giữ các tập tin của bất kỳ phiên bản nào.
 
 Kho thuần đóng vai trò hoạt động giống như máy chủ trung tâm trong SVN. Những 
 sự biên soạn mã nguồn chỉ xảy ra trên những bản sao, vì thế thư mục chủ ở máy 
 chủ trung tâm có thể hoạt động mà không cần thư mục làm việc. Điều này có nghĩa
-là khi mô hình hóa luồng làm việc trên Git, ta có kho trung tâm sẽ là kho-thuần,
-trong khi những kho địa phương trên máy của các cộng tác việc là 
-kho-không-thuần.
+là khi mô hình hóa luồng làm việc trên Git, ta có kho trung tâm sẽ là 
+kho-thuần, trong khi những kho địa phương trên máy của các cộng tác viên thì 
+không.
 
 ![](/images/git-tutorial-basics-init-barrepositories.png)
 
-#####Ví dụ
+##### Ví dụ
 
-Nếu giải nghĩa về kho thuần làm bạn rối trí. Hãy đừng lo. Việc khởi tạo kho 
-thuần có thể được dịch vụ lưu trữ kho Git mà bạn dùng thực hiện tự động. Mà
-dịch vụ web của GitHub là một ví dụ. Trong một trường hợp khác nào đó, quá 
+Nếu việc xuất hiện khái niệm kho thuần làm bạn lo ngại, thì rất may là, việc 
+khởi tạo kho thuần thường được dịch vụ lưu trữ kho Git mà bạn dùng thực hiện 
+tự động. Mà GitHub là một ví dụ. Trong một trường hợp khác nào đó, quá 
 trình tạo kho thuần vào máy chủ trung tâm trông sẽ giống như dưới đây
 
     ssh @
@@ -133,13 +137,13 @@ thư mục chứa project. Và câu lệnh cuối cùng sử dùng cờ `--bare`
 thuần. Những cộng tác viên sau đó đã có thể dùng lệnh `git clone my-project.git`
 để tạo một bản sao địa phương trên máy tính của họ.
 
-####Lệnh `git clone`
+#### Lệnh `git clone`
 
 ![](/images/git-tutorial-basics-clone.png)
 
 Lệnh `git clone` giúp nhân bản một kho Git đã được init. Hành động này trông 
 tương tự với `svn checkout`, nhưng tôi có thể giải thích rõ hơn ở đây, bạn hãy 
-nghĩ về sự khác nhau giữa "nhân bản" với "yêu cầu cung cấp". Với Git, bản sao 
+nghĩ về sự khác nhau giữa "nhân bản" với "lấy về nội dung". Với Git, bản sao 
 lấy về giống y hệt bản sao ở máy chủ trung tâm. Tất cả những gì có thể làm được
 trên bản chính thì cũng có thể làm với bản sao. Bản sao cũng có mọi thứ của kho
 chính, có lịch sử sửa đổi của riêng nó, bạn có thể quản lý mã nguồn với riêng 
@@ -150,13 +154,13 @@ Như một tiện ích, việc clone sẽ tự động tạo ra một thứ gọ
 giúp Git dễ dàng tương tác với kho trung tâm và hoàn thiện sự "giống một cách 
 hoàn hảo" của bản sao so với bản chính.
 
-#####Sử dụng
+##### Sử dụng
 
     git clone <repo>
 
 Nhân bản một kho Git tồn tại ở địa chỉ `<repo>` vào thư mục hiện hành. Kho gốc 
-có thể tồn tại trên hệ thống địa phương hoặc trên máy chủ từ xa mà truy cập 
-thông qua giao thức HTTP hoặc SSH.
+có thể tồn tại trên hệ thống địa phương hoặc trên máy chủ từ xa mà được truy 
+cập thông qua giao thức HTTP hoặc SSH.
 
     git clone <repo> <derectory>
 
@@ -164,33 +168,34 @@ Nhân bản kho Git <repo> tới thư mục <directory> ở máy địa phương
 
 #####Lời bàn
 
-Nếu một project đã được cài đặt vào máy chủ trung tâm, lệnh `git clone` là cách 
-thông dụng nhất để tạo bản sao. Giống như `git init`, nhân bản thường chỉ cần 
-làm một lần vào lúc cộng tác viên yêu cầu cần có bản sao, sau đó mọi hành động 
-quản lý phiên bản và cộng tác sẽ được quản lý trên kho địa phương của họ.
+Nếu một project đã được cài đặt vào máy chủ trung tâm, lệnh `git clone` là 
+cách thông dụng nhất để tạo bản sao. Giống như `git init`, nhân bản thường chỉ 
+cần làm một lần vào lúc cộng tác viên yêu cầu cần có bản sao, sau đó mọi hành 
+động quản lý phiên bản và cộng tác sẽ được quản lý trên kho địa phương của họ.
 
 #####Cộng tác trực tiếp Từ-Kho-Đến-Kho
 
-Một điểm rất quan trọng cần phải hiểu rõ đó là ý tưởng về "bản sao" của Git rất
-khác so với bản sao được checkout về từ kho SVN. Không giống SVN, Git không có
-sự khác biệt nào giữa bản sao hiện hành (là bản sao ở phía các cộng tác viên) và
-bản chính ở kho trung tâm - như tôi đã nhấn mạnh ở phần trước, tất cả những gì 
-thực hiện được với kho trung tâm thì cũng làm được trên bản sao.
+Một điểm rất quan trọng cần phải hiểu rõ đó là ý tưởng về "bản sao" của Git 
+rất khác so với bản sao được checkout về từ kho SVN. Không giống SVN, Git 
+không có sự khác biệt nào giữa bản sao hiện hành (là bản sao ở phía các cộng 
+tác viên) và bản chính ở kho trung tâm - như tôi đã nhấn mạnh ở phần trước, 
+tất cả những gì thực hiện được với kho trung tâm thì cũng làm được trên bản 
+sao.
 
 Sự khác biệt này khiến cho làm việc cộng tác với Git về cơ bản khác hoàn toàn 
 khi so với SVN. Trong khi SVN phụ thuộc vào mối liên hệ giữa bản sao và kho 
 trung tâm, sự cộng tác ở Git dựa trên sự ảnh hưởng của từng kho (hay là từng 
-bản sao (hay cũng có thể gọi là bản chính?)) với nhau. Thay vì kiểm tra bản sao
-hiện hành vào kho chính SVN, ở Git bạn `push` hoặc `pull` những `commit` từ một 
-kho này tới một kho khác.
+bản sao (hay cũng có thể gọi là bản chính?)) với nhau. Thay vì kiểm tra bản 
+sao hiện hành vào kho chính SVN, ở Git bạn `push` hoặc `pull` những `commit` 
+từ một kho này tới một kho khác.
 
 ![](/images/git-tutorial-basics-clone-repotorepocollaboration.png)
 
-Dĩ nhiên, không có điều gì cản trở bạn chỉ định rõ một kho Git duy nhất để đồng
-bộ. Ví dụ như, bằng việc đơn giản là thiết kế một kho Git nào đó như là kho 
-"trung tâm", sẽ cho phép nhóm của bạn triển khai mô hình "Luồng làm việc với 
-kho trung tâm" - có điều là, điểm này, dùng Git, và hoàn toàn bằng các quy ước 
-chứ không phải là "bắt buộc phải làm thế" giống như khi sử dụng VCS.
+Dĩ nhiên, không có điều gì cản trở bạn chỉ dùng mỗi một kho Git duy nhất để 
+đồng bộ. Ví dụ như, bằng việc đơn giản là thiết kế một kho Git nào đó như là 
+kho "trung tâm", sẽ cho phép nhóm của bạn triển khai mô hình "Luồng làm việc 
+với kho trung tâm" - có điều là, điểm này, dùng Git, và hoàn toàn bằng các quy 
+ước chứ không phải là "bắt buộc phải làm thế" giống như khi sử dụng VCS.
 
 #####Ví dụ
 
